@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const NavLink = async () => {
 
@@ -9,9 +10,11 @@ const data = await response.json();
 
     return (
         <div className='flex justify-center'>
-             {data.map((nav) => (
-                <div key={nav.id} className="flex items-center space-x-2 p-2 hover:bg-gray-100 cursor-pointer">
 
+            <Link href={"/src/app/page.tsx"}>home</Link>
+             {data.map((nav) => (
+                // <div key={nav.id} className="flex items-center space-x-2 p-2 hover:bg-gray-100 cursor-pointer" href={`/category/${nav.id}`}>
+<Link key={nav.id} className="flex items-center space-x-2 p-2 hover:bg-gray-100 cursor-pointer" href={`/category/${nav.id}`}>
 
                     {/* wrong it is icone not image */}
                     {/* <div><Image src={nav.icon} alt={nav.nameBn} width={30} height={30}/></div> */}
@@ -21,7 +24,7 @@ const data = await response.json();
 </div>
                     <div>{nav.nameBn}</div>
 
-                </div>
+                </Link>
             ))}
         </div>
     );

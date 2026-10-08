@@ -1,3 +1,4 @@
+import AllProducts from "@/components/AllProducts";
 import HeroSection from "@/components/HeroSection";
 import PriceDecreased from "@/components/PriceDecreased";
 import PricesIncreased from "@/components/PricesIncreased";
@@ -9,6 +10,7 @@ export default function Home() {
    <HeroSection/>
    <PricesIncreased/>
    <PriceDecreased/>
+   <AllProducts/>
    </>
   );
 }

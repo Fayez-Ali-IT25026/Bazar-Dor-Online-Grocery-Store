@@ -1,41 +1,33 @@
 import React from 'react';
 
-const Card = ({data}) => {
-
-
-// data is not an array, so .filter() cannot be used on it..filter() works only on arrays:
-// const increasePrice = data.filter((n: any) => n.dir === "up" );
+const AllProducts = async() => {
 
 
 
-
-// This gives true or false.
-// const increasePrice = data.change.dir === "up";
-
-
-
-// const increasePrice = data.filter(
-//   (item) => item.change.dir === "up"
-// );
+    const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products")
+const data = await res.json()
+// console.log(data)
 
 
-
-//show only 6 product
 // const increasePrice = data
 //   .filter((item) => item.change.dir === "up")
+
+
+
+  
+// const decreasedPrice = data
+//   .filter((item) => item.change.dir === "down")
 //   .slice(0, 6);
 
 
 
     return (
+        <div>
 
-<div>
+        <h2 className='font-bold text-3xl p-2'>সব পণ্য</h2>
+        <p className='text-gray-500'>মোট ৩৩টি পণ্য দেখানো হচ্ছে</p>
 
-         <div >
-<div className='flex gap-2 p-3'><span className="badge badge-error">▲</span>
- <h2 className='font-bold text-3xl p-2'>আজ দাম বেড়েছে</h2>
-</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
       {data.map((item) => (
         <div
@@ -72,9 +64,19 @@ const Card = ({data}) => {
             </div>
 
             <div className="mt-2">
-              <span className="badge badge-error">
+
+
+
+                {/* In JSX, you cannot put a normal if statement directly inside {}.{} in JSX → expressions like condition ? ... : ...
+                                                  if → use it outside JSX. */}
+             <div>
+                {item.change.dir === "up" ? <span className="badge badge-error">
                 ▲ {item.change.pct}%
-              </span>
+              </span> : <span className="badge badge-success">
+                ▼ {item.change.pct}%
+              </span>}
+                
+             </div>
 
               <span className="ml-2 text-sm text-gray-500">
                 গতকাল ৳{item.yesterday}
@@ -86,10 +88,8 @@ const Card = ({data}) => {
       ))}
 
     </div>
-
-</div>
-</div>
+        </div>
     );
 };
 
-export default Card;
+export default AllProducts;

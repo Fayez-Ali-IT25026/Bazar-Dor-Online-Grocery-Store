@@ -6,7 +6,7 @@ const PriceDecreased = async () => {
 
 const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products")
 const data = await res.json()
-console.log(data)
+// console.log(data)
 const decreasedPrice = data
   .filter((item) => item.change.dir === "down")
   .slice(0, 6);
@@ -17,6 +17,10 @@ const decreasedPrice = data
 
     return (
         <div>
+<div className='flex gap-2'><span className="badge badge-success">▼</span>
+ <h2 className='font-bold text-3xl p-2'>আজ দাম কমেছে</h2>
+</div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
       {decreasedPrice.map((item) => (
@@ -36,9 +40,7 @@ const decreasedPrice = data
                   {item.nameBn}
                 </h2>
 
-                <p className="text-sm text-gray-500">
-                  {item.categoryIcon} {item.categoryNameBn}
-                </p>
+               
               </div>
             </div>
 
