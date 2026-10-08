@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import NavLink from './NavLink';
 
 const Navbar = () => {
 
@@ -24,11 +25,12 @@ const Navbar = () => {
                         <span>{date}</span>
                         </div>
                 </div>
-                <div>
+                <div>j
 <button className="btn btn-ghost border-2 border-gray-400">সাইন ইন</button>
 <button className="btn bg-green-500 text-white">সাইন আপ</button>
                 </div>
             </nav>
+            <NavLink/>
         </div>
     );
 };
