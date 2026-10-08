@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import Link from 'next/link';
 
 const PricesIncreased = async () => {
 
@@ -14,6 +15,8 @@ const increasePrice = data
 
 
     return (
+
+      // <Link href={`/productDetails/${data.id}`}>
         <div>
             
 
@@ -38,6 +41,7 @@ const increasePrice = data
 
 
         </div>
+      //  </Link>
     );
 };
 

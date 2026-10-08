@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const AllProducts = async() => {
 
@@ -22,8 +23,15 @@ const data = await res.json()
 //   .slice(0, 6);
 
 
+// {/* <Link href={'/src/app/productDetails/${data.id}'}> */}  WRONG 
 
     return (
+
+
+
+// <Link href={`/productDetails/${data.id}`}>
+
+
         <div>
 
         <h2 className='font-bold text-3xl p-2'>সব পণ্য</h2>
@@ -32,8 +40,8 @@ const data = await res.json()
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
       {data.map((item) => (
-        <div
-          key={item.id}
+  <Link href={`/productDetails/${item.id}`} key={item.id}>
+    <div
           className="card bg-base-100 border shadow-sm"
         >
           <div className="card-body">
@@ -87,10 +95,12 @@ const data = await res.json()
 
           </div>
         </div>
-      ))}
+      </Link>
+  ))}
 
     </div>
         </div>
+        // </Link>
     );
 };
 

@@ -11,20 +11,20 @@ const HeroSection = () => {
     });
 
     return (
-        <div className='flex justify-center items-center'>
+        <div className='flex flex-col md:flex-row justify-between items-center gap-8 px-6 py-12 md:px-12 lg:px-20 bg-green-50 rounded-2xl my-6'>
             
-<div className=''>
-     <span className='text-green-400'>{date}</span>
+<div className='max-w-2xl'>
+     <span className='text-green-600 font-medium'>{date}</span>
 
-    <h1 className='text-3xl font-bold pb-3'>আজকের বাজারের দাম এক নজরে</h1>
-    <p className='pb-3'>চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।</p>
+    <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold pb-4 pt-2 text-gray-800 leading-tight'>আজকের বাজারের দাম এক নজরে</h1>
+    <p className='pb-5 text-gray-600 text-base md:text-lg leading-7'>চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।</p>
 
-    <button className="btn bg-green-500 text-white"  
+    <button className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"  
                     >সব পণ্য দেখুন</button>
 </div>
 <div>
 
-    <Image src = "/src/asset/bazar-hero.png" alt='Bazar' width={50} height={50}></Image>
+    <Image src = "/bazar-hero.png" alt='Bazar' width={350} height={350} className='w-64 md:w-80 lg:w-96'></Image>
 </div>
 
         </div>

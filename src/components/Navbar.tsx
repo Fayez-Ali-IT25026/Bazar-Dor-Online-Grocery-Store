@@ -9,14 +9,14 @@ const Navbar = () => {
     dateStyle: "full", 
     });
 
-    
+
 
     return (
         <div className="bg-white shadow-md">
             <nav className="flex justify-between items-center p-4 bg-white  max-w-7xl mx-auto">
                 <div className="flex items-center space-x-4">
                     <Image 
-                    src="/public/logo.jpg"
+                    src="/logo.jpg"
                     alt="Logo"
                     width={50}
                     height={50}
@@ -27,8 +27,8 @@ const Navbar = () => {
                         <span>{date}</span>
                         </div>
                 </div>
-                <div>j
-<button className="btn btn-ghost border-2 border-gray-400">সাইন ইন</button>
+                <div>
+<button className="btn btn-ghost border-1 border-gray-400">সাইন ইন</button>
 <button className="btn bg-green-500 text-white">সাইন আপ</button>
                 </div>
             </nav>

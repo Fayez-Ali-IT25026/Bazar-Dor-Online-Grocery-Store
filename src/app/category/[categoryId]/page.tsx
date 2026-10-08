@@ -1,5 +1,6 @@
 import React from 'react';
 import SortProducts from "@/components/SortProducts";
+import Link from 'next/link';
 
 const CategoryProducts = async ({params}) => {
 
@@ -63,8 +64,8 @@ console.log(data)
       ))}
     </div>
   </div> */}
-
-
+{/* 
+<Link href={`/productDetails/${data.id}`} > */}
 
 <div className="mx-auto w-full max-w-5xl space-y-4 px-4 py-6">
     <div className="flex items-center gap-3 rounded-2xl border border-gray-200 bg-white px-5 py-4">
@@ -129,6 +130,7 @@ console.log(data)
 
 
         </div>
+        // </Link>
     );
 };
 
