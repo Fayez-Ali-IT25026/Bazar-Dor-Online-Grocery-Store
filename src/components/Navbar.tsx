@@ -6,6 +6,7 @@ import SignIn from '@/app/singin/page';
 import { authClient } from "@/lib/auth-client";
 import SignOut from '@/app/singout/page';
 import NavbarClient from "./NavbarClient";
+import Profile from './Profile';
 
 
 
@@ -91,6 +92,7 @@ const Navbar = () => {
 
 
 <NavbarClient/>
+
 
 
                 </div>

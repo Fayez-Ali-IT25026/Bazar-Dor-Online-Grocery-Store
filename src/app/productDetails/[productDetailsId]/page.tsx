@@ -6,7 +6,9 @@ const page = async ({params}) => {
 // const {productDetailsId} = params
 const {productDetailsId} = await params
 
-const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productDetailsId}`);
+
+const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${productDetailsId}`);
+// const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productDetailsId}`);
 
 const p = await res.json();
 // console.log(p)

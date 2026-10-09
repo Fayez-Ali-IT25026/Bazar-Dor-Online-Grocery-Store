@@ -16,7 +16,10 @@ const NavbarClient = () => {
             {session?.user ? (
                 <>
                     <div className="flex gap-2 justify-center items-center">
-Welcome {session.user.name}
+<div>
+    Welcome {session.user.name} <br />
+<Link href={"/Profile"} className="text-green-500 font-bold">Update Profile</Link>
+</div>
                     <SignOut />
 
                     </div>

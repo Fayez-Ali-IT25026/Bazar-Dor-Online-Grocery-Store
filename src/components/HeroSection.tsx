@@ -20,8 +20,8 @@ const HeroSection = () => {
     <h1 className='text-3xl md:text-4xl lg:text-5xl font-bold pb-4 pt-2 text-gray-800 leading-tight'>আজকের বাজারের দাম এক নজরে</h1>
     <p className='pb-5 text-gray-600 text-base md:text-lg leading-7'>চাল, ডাল, তেল, সবজি, মাছ, মাংস, ডিম ও মসলার দাম — বাজারভিত্তিক বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।</p>
  
-    {/* <Link href="/AllProductsZ" className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"  
-                    >সব পণ্য দেখুন</Link> */} 
+    {/* <Link href={"/AllProductX"} className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"  
+                    >সব পণ্য দেখুন</Link>  */}
 
 
                      <button className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"  
