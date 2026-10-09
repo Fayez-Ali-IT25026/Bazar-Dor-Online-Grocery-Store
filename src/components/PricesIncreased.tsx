@@ -17,7 +17,7 @@ const increasePrice = data
     return (
 
       // <Link href={`/productDetails/${data.id}`}>
-        <div>
+        <div className='pt-10'>
             
 
 

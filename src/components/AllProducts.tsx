@@ -32,7 +32,7 @@ const data = await res.json()
 // <Link href={`/productDetails/${data.id}`}>
 
 
-        <div>
+        <div className='pt-30'>
 
         <h2 className='font-bold text-3xl p-2'>সব পণ্য</h2>
         <p className='text-gray-500'>মোট ৩৩টি পণ্য দেখানো হচ্ছে</p>

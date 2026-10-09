@@ -11,7 +11,7 @@ const SignOut = () => {
     await authClient.signOut({
       fetchOptions: {
         onSuccess: () => {
-          router.push("/signin"); // Redirect to the sign-in page after successful sign-out 
+          router.push("/singin"); // Redirect to the sign-in page after successful sign-out 
         },
       },
     });

@@ -20,7 +20,7 @@ const decreasedPrice = data
     return (
         // <Link href={'/src/app/productDetails/${data.id}'}>
         
-        <div>
+        <div className='pt-30'>
     <div className="flex gap-2">
       <span className="badge badge-success">▼</span>
       <h2 className="font-bold text-3xl p-2">আজ দাম কমেছে</h2>
