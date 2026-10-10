@@ -25,7 +25,8 @@ if (error) {
 }
 
 toast.success("Name updated successfully!");
-router.push("/singin");
+// router.push("/singin");
+router.push("/profile");
   };
 
   return (

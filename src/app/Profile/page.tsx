@@ -1,6 +1,7 @@
 import React from 'react';
 // import { authClient } from "@/lib/auth-client"
 import ProfileForm from "@/components/ProfileForm";
+import Link from 'next/link';
 
 
 const Profile = async () => {
@@ -81,7 +82,7 @@ const Profile = async () => {
           </button>
 
         </form> */}
-<ProfileForm />
+{/* <ProfileForm /> */}
 
 
 
@@ -89,7 +90,9 @@ const Profile = async () => {
         <p className="text-xs text-gray-400 text-center mt-6">
           Your profile information belongs to your BazarDor account.
         </p>
-
+<Link href="/profile/update">
+  Update Profile
+</Link>
       </div>
     </div>
 

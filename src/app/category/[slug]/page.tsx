@@ -6,9 +6,9 @@ import { notFound } from "next/navigation";
 const CategoryProducts = async ({params}) => {
 
 
-const {categoryId} = await params
-// const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`);
-const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${categoryId}`);
+const {slug} = await params
+// const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`);
+const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${slug}`);
 
 if (!res.ok) {
   notFound();
