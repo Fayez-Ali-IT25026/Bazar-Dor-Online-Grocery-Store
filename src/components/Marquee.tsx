@@ -9,7 +9,7 @@
 import MarqueeText from "react-marquee-text"
 // import "MarqueeText/styles.css"  change to 
 import "react-marquee-text/dist/styles.css"
-
+import type { Product } from "@/types/product";
 
 
 
@@ -20,7 +20,8 @@ const Marquee = async () => {
 
     // const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products")
 const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products")
-const data = await res.json()
+// const data = await res.json()
+const data: Product[] = await res.json();
 // console.log(data)
 
 
