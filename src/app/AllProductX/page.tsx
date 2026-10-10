@@ -3,13 +3,20 @@
 // const AllProductX = async () => {
 
 
+//      const res = await fetch(
+//     "https://api.api-store.workers.dev/api/bazardor/products"
+//   );
+
+
 //   const res = await fetch(
 //     "https://api.abcz.workers.dev/api/bazardor/products"
 //   );
 
-// //   if (!res.ok) {
-// //     throw new Error("Failed to fetch products");
-// //   }
+
+
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch products");
+//   }
 
 //   const data = await res.json();
 
@@ -17,7 +24,7 @@
 
 //     return (
 //         <div>
-            
+//             <p></p>
 
 
 // <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -54,7 +61,7 @@
 //               <div className="mt-2 flex flex-wrap items-center gap-2">
 //                 {item.change?.dir === "up" ? (
 //                   <span className="badge badge-error">
-//                     ▲ {Math.abs(item.change.pct)}%
+//                  ▲ {Math.abs(item.change.pct)}%
 //                   </span>
 //                 ) : item.change?.dir === "down" ? (
 //                   <span className="badge badge-success">

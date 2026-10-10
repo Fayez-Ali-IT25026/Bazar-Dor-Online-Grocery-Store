@@ -31,6 +31,8 @@ const data = await res.json()
 
 // <Link href={`/productDetails/${data.id}`}>
 
+// {/* <section id="সব-পণ্য" className="py-10"> */}
+<section id="all-products" className="py-10 scroll-mt-6">
 
         <div className='pt-30'>
 
@@ -100,6 +102,7 @@ const data = await res.json()
 
     </div>
         </div>
+        </section>
         // </Link>
     );
 };

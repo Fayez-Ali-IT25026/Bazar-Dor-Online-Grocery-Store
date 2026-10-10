@@ -2,6 +2,7 @@ import React from 'react';
 // import { authClient } from "@/lib/auth-client"
 import ProfileForm from "@/components/ProfileForm";
 
+
 const Profile = async () => {
 
 // await authClient.updateUser({

@@ -24,9 +24,23 @@ const HeroSection = () => {
                     >সব পণ্য দেখুন</Link>  */}
 
 
+
+{/* <a
+  href="#সব-পণ্য"
+  className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"
+></a> */}
+
+       <a
+  href="#all-products"
+  className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"
+>
+  সব পণ্য দেখুন
+</a>
+
+{/* 
                      <button className="btn bg-green-500 hover:bg-green-600 border-none text-white px-6"  
                     >সব পণ্য দেখুন</button>
-                    
+                     */}
 </div>
 <div>
 

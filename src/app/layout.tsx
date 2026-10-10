@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Marquee from "@/components/Marquee";
 import Footer from "@/components/Footer";
+import ToasterProvider from "@/components/ToasterProvider";
 
 const notoSerifBengali = Noto_Serif_Bengali({
   variable: "--font-noto-serif-bengali",
@@ -35,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </div>
         
         <div className = "max-w-7xl mx-auto ">
-          
+           <ToasterProvider />
           {children}
           </div>
         

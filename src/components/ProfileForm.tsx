@@ -2,23 +2,30 @@
 
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const ProfileForm = () => {
+
+
+const router = useRouter();
+
   const [name, setName] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const { error } = await authClient.updateUser({
-      name: name,
-    });
+  name,
+});
 
-    if (error) {
-      alert("Failed to update name!");
-    } else {
-      alert("Name updated successfully!");
-      setName("");
-    }
+if (error) {
+  toast.error(error.message || "Profile update failed");
+  return;
+}
+
+toast.success("Name updated successfully!");
+router.push("/singin");
   };
 
   return (
