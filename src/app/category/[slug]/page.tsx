@@ -2,11 +2,22 @@ import React from 'react';
 import SortProducts from "@/components/SortProducts";
 import Link from 'next/link';
 import { notFound } from "next/navigation";
+import type { Product } from "@/types/product";
 
-const CategoryProducts = async ({params}) => {
+type CategoryProductsProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
 
 
-const {slug} = await params
+
+const CategoryProducts = async ({
+  params,
+}: CategoryProductsProps) => {
+
+
+const {slug } = await params
 // const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`);
 const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${slug}`);
 

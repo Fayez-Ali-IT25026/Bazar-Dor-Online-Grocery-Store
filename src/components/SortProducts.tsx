@@ -1,12 +1,19 @@
 "use client";
+import type { Product } from "@/types/product";
 
 import { useState } from "react";
 
-const SortProducts = ({ products }) => {
+
+
+type SortProductsProps = {
+  products: Product[];
+};
+
+const SortProducts = ({ products }: SortProductsProps) => {
   const [sort, setSort] = useState("default");
 
   // Bengali number → English number
-  const toEnglishNumber = (value) => {
+  const toEnglishNumber = (value: number | string) => {
     if (typeof value === "number") return value;
 
     const banglaDigits = "০১২৩৪৫৬৭৮৯";

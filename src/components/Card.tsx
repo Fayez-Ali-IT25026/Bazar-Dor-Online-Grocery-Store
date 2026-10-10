@@ -1,7 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Product } from "@/types/product";
 
-const Card = ({data}) => {
+
+
+type CardProps = {
+  data: Product;
+};
+
+const Card = ({ data }: CardProps) => {
+// const Card = ({data}) => {
 
 
 // data is not an array, so .filter() cannot be used on it..filter() works only on arrays:

@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Product } from "@/types/product";
 
 const NavLink = async () => {
 
 // const response = await fetch('https://api.api-store.workers.dev/api/bazardor/categories');
 const response = await fetch('https://api.abcz.workers.dev/api/bazardor/categories');
-const data = await response.json();
+// const data = await response.json();
+const data: Product[] = await response.json();
 // console.log(data);
 
     return (
@@ -33,7 +35,7 @@ const data = await response.json();
                     {/* <div><Image src={nav.icon} alt={nav.nameBn} width={30} height={30}/></div> */}
 
                     <div className="text-2xl">
-    {nav.icon}
+    {nav.categoryIcon}
 </div>
                     <div className="font-medium">{nav.nameBn}</div>
 

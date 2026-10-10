@@ -4,8 +4,17 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { notFound } from "next/navigation";
 import Link from 'next/link';
+import type { Product } from "@/types/product";
 
-const page = async ({params}) => {
+
+
+type PageProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
+const page = async ({ params }: PageProps) => {
 
 // await dete hobe
 // const {productDetailsId} = params
