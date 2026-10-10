@@ -6,6 +6,8 @@ import { authClient } from "../../lib/auth-client";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
+
+
 const SignUp = () => {
 
 const router = useRouter();
@@ -50,12 +52,25 @@ const router = useRouter();
 const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
+  // Check empty fields
+  if (!name || !email || !password || !confirmPassword) {
+    toast.error("Please fill in all fields.");
+    return;
+  }
+
+  // Check password match
+  if (password !== confirmPassword) {
+    toast.error("Passwords do not match!");
+    return;
+  }
+
+  // Your existing Better Auth code continues here
   const { data, error } = await authClient.signUp.email(
     {
       name: name,
       email: email,
       password: password,
-      callbackURL: "/",
+      callbackURL: "/singin",
     },
     {
       onRequest: () => {
@@ -68,7 +83,7 @@ const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
         toast.success("Account created successfully!", {
           id: "signup",
         }
-      ); router.push("/");
+      ); router.push("/singin");
       },
 
       onError: (ctx) => {
@@ -241,7 +256,7 @@ const handelGithub = async () => {
 
         <p className="mt-5 text-center text-xs text-gray-600">
           অ্যাকাউন্ট আছে?{" "}
-          <Link href="/signin" className="font-medium text-green-700 hover:underline">
+          <Link href="/singin" className="font-medium text-green-700 hover:underline">
             সাইন ইন করুন
           </Link>
         </p>

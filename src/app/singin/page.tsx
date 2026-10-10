@@ -21,13 +21,25 @@ const SignIn = () => {
 //   };
 
 
+React.useEffect(() => {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("reason") === "login-required") {
+    toast.error("Please sign in to view product details.");
+  }
+}, []);
+
+
+
+
+
 
 const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   const { data, error } = await authClient.signIn.email({
-    email: 'email',
-    password: 'password',
+    email: email,
+    password: password,
     rememberMe: true,
     callbackURL: "/",
   });
@@ -43,7 +55,7 @@ const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
 };
 
 
-const authClient = createAuthClient();
+// const authClient = createAuthClient();
 
 const signIn = async () => {
   const data = await authClient.signIn.social({
@@ -155,7 +167,7 @@ const signInX = async () => {
 
         <p className="mt-5 text-center text-xs text-gray-600">
           অ্যাকাউন্ট নেই?{" "}
-          <Link href="/signup" className="font-medium text-green-700 hover:underline">
+          <Link href="/singup" className="font-medium text-green-700 hover:underline">
             সাইন আপ করুন
           </Link>
         </p>

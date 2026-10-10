@@ -1,15 +1,29 @@
 import React from 'react';
 import SortProducts from "@/components/SortProducts";
 import Link from 'next/link';
+import { notFound } from "next/navigation";
 
 const CategoryProducts = async ({params}) => {
 
 
 const {categoryId} = await params
-const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`);
-// const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${categoryId}`);
+// const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${categoryId}`);
+const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${categoryId}`);
+
+if (!res.ok) {
+  notFound();
+}
 
 const data = await res.json();
+
+if (!data || !data.nameBn) {
+  notFound();
+}
+
+
+
+
+
 console.log(data)
 
     return (

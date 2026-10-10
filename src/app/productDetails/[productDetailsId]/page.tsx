@@ -1,4 +1,8 @@
 import React from 'react';
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 const page = async ({params}) => {
 
@@ -7,10 +11,42 @@ const page = async ({params}) => {
 const {productDetailsId} = await params
 
 
-const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${productDetailsId}`);
-// const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productDetailsId}`);
+
+
+
+
+
+const session = await auth.api.getSession({
+  headers: await headers(),
+});
+
+if (!session) {
+  redirect("/singin");
+}
+
+
+// const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products/${productDetailsId}`);
+const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products/${productDetailsId}`);
+
+if (!res.ok) {
+  notFound();
+}
 
 const p = await res.json();
+
+if (
+  !p ||
+  !p.nameBn ||
+  !Array.isArray(p.markets) ||
+  p.markets.length === 0
+) {
+  notFound();
+}
+
+
+
+
+// const p = await res.json();
 // console.log(p)
 
 
