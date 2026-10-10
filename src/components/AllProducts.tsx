@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Product } from "@/types/product";
 
 const AllProducts = async() => {
 
@@ -8,7 +9,7 @@ const AllProducts = async() => {
     // const res = await fetch("https://api.api-store.workers.dev/api/bazardor/products")
 const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products")
 
-const data = await res.json()
+const data: Product[] = await res.json();
 // console.log(data)
 
 

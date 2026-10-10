@@ -17,7 +17,7 @@ const CategoryProducts = async ({
 }: CategoryProductsProps) => {
 
 
-const {slug } = await params
+const {slug} = await params
 // const res = await fetch(`https://api.api-store.workers.dev/api/bazardor/products?category=${slug}`);
 const res = await fetch(`https://api.abcz.workers.dev/api/bazardor/products?category=${slug}`);
 
@@ -25,9 +25,14 @@ if (!res.ok) {
   notFound();
 }
 
-const data = await res.json();
+// const data = await res.json();
 
-if (!data || !data.nameBn) {
+// if (!data || !data.nameBn) {
+//   notFound();
+// }
+const data: Product[] = await res.json();
+
+if (!Array.isArray(data) || data.length === 0) {
   notFound();
 }
 

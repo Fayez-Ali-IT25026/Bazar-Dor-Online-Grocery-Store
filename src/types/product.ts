@@ -5,6 +5,7 @@ export type Product = {
   category: string;
   categoryNameBn: string;
   categoryIcon: string;
+  icon:string;
   unit: string;
   image: string;
   today: number;

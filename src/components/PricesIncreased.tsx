@@ -36,7 +36,7 @@ const increasePrice = data
 
 
 
-<Card data ={increasePrice} />
+<Card data  ={increasePrice} />
 
 
 

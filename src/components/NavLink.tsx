@@ -35,7 +35,7 @@ const data: Product[] = await response.json();
                     {/* <div><Image src={nav.icon} alt={nav.nameBn} width={30} height={30}/></div> */}
 
                     <div className="text-2xl">
-    {nav.categoryIcon}
+    {nav.icon}
 </div>
                     <div className="font-medium">{nav.nameBn}</div>
 

@@ -5,7 +5,7 @@ import type { Product } from "@/types/product";
 
 
 type CardProps = {
-  data: Product;
+  data: Product[];
 };
 
 const Card = ({ data }: CardProps) => {

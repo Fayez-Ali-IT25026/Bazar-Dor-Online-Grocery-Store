@@ -14,6 +14,13 @@ type PageProps = {
   }>;
 };
 
+type Market = {
+  market: string;
+  division: string;
+  min: number;
+  max: number;
+};
+
 const page = async ({ params }: PageProps) => {
 
 // await dete hobe
@@ -289,7 +296,7 @@ if (
                   সর্বনিম্ন দাম
                 </p>
                 <p className="mt-3 text-3xl font-extrabold text-green-700">
-                  ৳{Math.min(...p.markets.map((m) => m.min))}
+                  ৳{Math.min(...p.markets.map((m: Market) => m.min))}
                 </p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-100 text-2xl">
@@ -309,7 +316,7 @@ if (
                   সর্বোচ্চ দাম
                 </p>
                 <p className="mt-3 text-3xl font-extrabold text-red-600">
-                  ৳{Math.max(...p.markets.map((m) => m.max))}
+                  ৳{Math.max(...p.markets.map((m: Market) => m.max))}
                 </p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-red-50 text-2xl">
@@ -375,7 +382,7 @@ if (
             </thead>
 
             <tbody className="divide-y divide-gray-100">
-              {p.markets.map((m, i) => (
+              {p.markets.map((m: Market, i: number) => (
                 <tr
                   key={`${m.market}-${i}`}
                   className="transition hover:bg-green-50/60"
